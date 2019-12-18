@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="musictrack">
+
+<head>
+    <title>Music Track</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+    <div ng-view class="container content">
+    
+    </div>
+ <footer class="footer">
+        <div class="container">
+            <p class="text-muted text-center">
+                <a href="#" target="_blank">
+                    <img src="#" height="26" alt="Absolute Dimension">
+                </a>
+            </p>
+            
+            <p class="text-muted text-center">
+            <small>
+            &copy;2019 Absolute Dimension Co.
+            </small>
+            </p>
+        </div>
+    </footer>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src='views/app.js'></script>
+    <script src="views/tracks-list/tracks.list.controller.js"></script>
+    <script src="views/track-display/track.display.controller.js"></script>
+    <script src="views/track.data.factory/track.data.factory.js"></script>
+    <script src="views/track-rating/track.rating.directive.js"></script>
+    <script src="views/genre.data.factory/genre.data.factory.js"></script>
+    <script src="views/genres-list/genres.list.controller.js"></script>
+</body>
+</html>

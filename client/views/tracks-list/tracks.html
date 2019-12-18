@@ -1,0 +1,35 @@
+<h1>
+{{ vm.title }}
+</h1>
+<table >
+    <tr ng-repeat="track in vm.tracks">
+        <td > <a ng-href="#!/track/{{ track._id }}" > {{ track.title }} </a></td>
+        <td > [ {{ track.genres[0].name }} ]  </td>
+        <td >{{ track.rating }} </td>
+    </tr>
+
+</table>
+
+<br><br>
+
+<h4>Add New Track Here</h4>
+<form name="vm.trackForm" ng-submit="vm.addTrack()">
+  Track Title: <input type="text" name="title" required ng-minlength="2" ng-model="vm.title">
+  <div ng-show="vm.trackForm.title.$dirty && vm.trackForm.title.$invalid && vm.isSubmitted">
+    <p>Name should be more than 2 characters long</p>
+  </div>
+<br><br>
+  Your rating: <input type="number" name="rating" required ng-pattern="/^[1-5]$/" ng-model="vm.rating">
+  <div ng-show="vm.trackForm.rating.$dirty && vm.trackForm.rating.$invalid && vm.isSubmitted">
+    <p>Rating must be between 1-5.</p>
+
+  </div>
+    <br><br>
+
+  Track's Genre: <input type="text" name="genres" required ng-model="vm.genres">
+  <div ng-show="vm.trackForm.genres.$dirty && vm.isSubmitted">
+    <p>Please add a genre/p>
+  </div>
+<br>
+  <button type="submit" class="btn">Add Track</button>
+</form>

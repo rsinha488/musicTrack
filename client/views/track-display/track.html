@@ -1,0 +1,34 @@
+<h1>Details of  {{ vm.track.title }}  </h1>
+
+<table>
+    <tr>
+        <td><b>Title</b></td>
+        <td >{{ vm.track.title }}</td>
+    </tr>
+    <tr>
+         <td><b>Genre</b></td>
+        <td >{{ vm.track.genres[0].name }}</td>
+    </tr>
+    <tr>
+         <td><b>Rating</b></td>
+        <td ><track-rating stars="vm.stars"></track-rating></td>
+    </tr>
+    
+</table>
+<br><br>
+<!--Add New Track /:trackId/genres-->
+ <a ng-href="#!/{{ vm.track._id }}/genres" >See All Genres </a>
+
+<br><br>
+<!--Add a Genre-->
+<h4>Add Genre</h4>
+<form name="vm.genreForm" ng-submit="vm.addGenre()">
+    
+  Genre name: <input type="text" name="name" required ng-minlength="2" ng-model="vm.name">
+  <div ng-show="vm.genreForm.name.$dirty && vm.genreForm.name.$invalid && vm.isSubmitted">
+    <p>Name should be more than 2 characters long</p>
+  </div>
+<br>
+
+  <button type="submit" class="btn">Add review</button>
+</form>
